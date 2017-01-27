@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.tuboi</groupId>
+	<artifactId>my-mpxj</artifactId>
+	<version>16</version>
+	<name>My Mpxj</name>
+	<description>this is a library with mpxj library and poi 2.0 library to avoid dependent conflict</description>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>br.com.tuboi.msoffice</groupId>
+			<artifactId>poi</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>br.com.tuboi.msproject</groupId>
+			<artifactId>mpxj</artifactId>
+			<version>0.0.16</version>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>2.4.3</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<relocations>
+								<relocation>
+									<pattern>br.com.tuboi.msoffice</pattern>
+									<shadedPattern>br.com.tuboi.my.msoffice</shadedPattern>
+								</relocation>
+							</relocations>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer" />
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

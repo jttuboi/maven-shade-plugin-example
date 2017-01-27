@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.tuboi.msproject</groupId>
+	<artifactId>mpxj</artifactId>
+	<version>0.0.16</version>
+	<name>Mpxj</name>
+	<description>library msproject example</description>
+
+	<dependencies>
+		<!-- the mpxj depends poi library to work -->
+		<dependency>
+			<groupId>br.com.tuboi.msoffice</groupId>
+			<artifactId>poi</artifactId>
+			<version>2.0</version>
+		</dependency>
+	</dependencies>
+</project>
